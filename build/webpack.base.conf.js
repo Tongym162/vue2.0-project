@@ -23,6 +23,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'vui': resolve('src/vui'),
     }
   },
   module: {
@@ -47,12 +48,21 @@ module.exports = {
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url-loader',
+        loader: 'url-loader?name=static/fonts/[name].[md5:hasg:hex:7].[ext]'  //字体文件最后会以字符的形式保存在css文件中
+        /*loader: 'url-loader',
         query: {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
-        }
-      }
+        }*/
+      },
+      {
+        test: /\.less$/,
+        loader: 'style!css!less'
+      },
+      {
+        test: /\.css$/,
+        loader:  'style!css'
+      },
     ]
   }
 }
