@@ -18,5 +18,5 @@
 > 这个方法的参数是一个整数，意思是在 history 记录中向前或者后退多少步，类似 window.history.go(n)。
   * 在浏览器记录中前进一步，等同于 history.forward()
   `router.go(1)`
-  * 后退一步记录，等同于 history.back()
+  * 后退一步记录，等同于 history.back()  
    `router.go(-1)`
