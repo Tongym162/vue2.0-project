@@ -5,13 +5,17 @@
                   @event-custom-selected="selected"></input-select>
     <!--省市区选择器-->
     <input-city :data="area" :valid-promise-array="validArray"></input-city>
+
+    <input-radio></input-radio>
   </div>
 </template>
 <style scoped>
 </style>
 <script>
-  import InputSelect from 'vui/Form/InputSelect.vue'
+  import InputSelect from 'vui/Form/InputSelect'
   import InputCity from 'vui/Form/InputCity/InputCity'
+  import InputRadio from 'vui/Form/InputRadio'
+
   export default{
     data(){
       return {
@@ -67,7 +71,8 @@
     },
     components: {
       InputSelect,
-      InputCity
+      InputCity,
+      InputRadio
     }
   }
 </script>

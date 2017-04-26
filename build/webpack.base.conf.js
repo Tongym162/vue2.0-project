@@ -56,13 +56,25 @@ module.exports = {
         }*/
       },
       {
-        test: /\.less$/,
-        loader: 'style!css!less'
+        test: /\.css$/,
+        loader: 'style!css?importLoaders=1!postcss'  //处理顺序 从右到左
+        // ?importLoaders=1 表示 引入嵌入的 css文件也会按照postcss这样自动添加前缀
+        /*loader:  'style!css'*/
       },
       {
-        test: /\.css$/,
-        loader:  'style!css'
+        test: /\.less$/,
+        loader: 'style!css!postcss!less'
+        /*loader: 'style!css!less'*/
       },
-    ]
+      {
+        test: /\.sass/,
+        loader: 'style!css!postcss!sass'
+      },
+      {
+        test: /\.(css|scss|less)$/,
+        loader:"style-loader!css-loader?importLoaders=1!postcss-loader" //由于webpack2.X 版本对post-css书写方式的改变
+        //需要新添加 postcss.config.js
+      }
+    ],
   }
 }
