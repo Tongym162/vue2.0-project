@@ -6,7 +6,7 @@
     <!--省市区选择器-->
     <input-city :data="area" :valid-promise-array="validArray"></input-city>
 
-    <input-radio></input-radio>
+    <input-radio :radio-group="radioGroup" v-on:radio-select-event="radioSelect"></input-radio>
   </div>
 </template>
 <style scoped>
@@ -59,6 +59,17 @@
           district: ''
         },
         validArray: [],
+        //radio数据
+        radioGroup: [
+          {
+            name: '苹果',
+            value: 'apple'
+          },
+          {
+            name: '香蕉',
+            value: 'banana'
+          },
+        ],
       }
     },
     mounted(){
@@ -67,6 +78,9 @@
     methods: {
       selected(value){
         console.log("selected-value", value);
+      },
+      radioSelect(val){
+        console.log('radio-select-val:',val);
       }
     },
     components: {

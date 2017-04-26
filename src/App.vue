@@ -16,6 +16,7 @@ export default {
 </script>
 
 <style>
+  @import "assets/css/cssreset.min.css";
   @import "assets/fonts/iconfont.css";
 
   html, body {
@@ -31,6 +32,9 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
+    padding: 10px 15px;
+    height: 100%;
+    overflow-y: auto;
   }
 
   ul {
