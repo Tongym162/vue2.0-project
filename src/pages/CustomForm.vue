@@ -6,15 +6,22 @@
     <!--省市区选择器-->
     <input-city :data="area" :valid-promise-array="validArray"></input-city>
 
+    <!--radio组件-->
     <input-radio :radio-group="radioGroup" v-on:radio-select-event="radioSelect"></input-radio>
+
+    <!--checkbox组件-->
+    <input-checkbox></input-checkbox>
   </div>
 </template>
 <style scoped>
 </style>
 <script>
-  import InputSelect from 'vui/Form/InputSelect'
-  import InputCity from 'vui/Form/InputCity/InputCity'
-  import InputRadio from 'vui/Form/InputRadio'
+  import {
+    InputSelect,
+    InputCity,
+    InputRadio,
+    InputCheckbox
+  } from 'vui/Form'
 
   export default{
     data(){
@@ -86,7 +93,8 @@
     components: {
       InputSelect,
       InputCity,
-      InputRadio
+      InputRadio,
+      InputCheckbox
     }
   }
 </script>

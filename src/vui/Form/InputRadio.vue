@@ -108,13 +108,7 @@
     },
     props: {
       radioGroup: {
-          type: Array,
-          default: [
-            {
-              name: '苹果',
-              value: 'apple'
-            },
-          ]
+          type: Array
       }
 
     },
